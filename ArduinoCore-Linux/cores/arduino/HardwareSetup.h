@@ -8,6 +8,7 @@
 
 //#include "RemoteI2S.h"
 
+#include <exception>
 
 namespace arduino {
 
@@ -94,7 +95,7 @@ class HardwareSetupImpl {
                         }
                     }    
                     delay(10000);
-                } catch (const std::exception& e) { 
+                } catch (std::exception& e) { 
                     Logger.error("WiFiUDPStream", e.what());
                 }
             }
